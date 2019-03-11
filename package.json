@@ -1,0 +1,22 @@
+{
+  "name": "jsrepo",
+  "version": "1.0.0",
+  "description": "This repository contains project related to udemy course \"The complete node.js developer'",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkavukat/JSRepo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tkavukat/JSRepo/issues"
+  },
+  "homepage": "https://github.com/tkavukat/JSRepo#readme",
+  "dependencies": {
+    "validator": "^10.8.0"
+  }
+}
