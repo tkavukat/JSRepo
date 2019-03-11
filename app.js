@@ -1,5 +1,5 @@
-const notes = require('./notes.js')
+const getNotes = require('./notes.js')
 
-const myNotes = notes()
+const myNotes = getNotes()
 console.log(myNotes)
 
