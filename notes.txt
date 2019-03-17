@@ -1,1 +1,0 @@
-File from Node.js sample!This class is interesting!
