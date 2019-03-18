@@ -33,6 +33,21 @@ const removeNote = (title) => {
     }
 }
 
+const listNotes = () => {
+    const notes = loadNotes()
+    var count = 0
+    if(notes.length > 0){
+        console.log(chalk.green.inverse('Your notes'))
+        notes.forEach(note => {
+            count++
+            console.log(count + '. ' + note.title)
+        });
+    }
+    else{
+        console.log(chalk.red.inverse('No notes in the list!'))
+    }
+}
+
 const saveNotes = (notes) => {
     try{
         const dataJSONString = JSON.stringify(notes)
@@ -58,5 +73,6 @@ const loadNotes = () => {
 module.exports = {
     getNotes: getNotes,
     addNote : addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }

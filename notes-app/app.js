@@ -6,11 +6,12 @@ const notes = require('./notes.js')
 //customize yargs.version
 yargs.version('1.1.0')
 
-//challenge: Add an option to yargs
+//Goal: Wire Up list command
 //
-// 1. Setup a body option for the add command
-// 2. Configure a description, make it required, and for it to be a sstring
-// 3. Log the body value in the handler function
+// 1. Create and export listNotes from notes.js
+//  - "Your notes" using chalk
+//  - Print notes title for each note
+// 2. Call listNotes from command handler
 // 4. Test your work!
 
 
@@ -70,7 +71,7 @@ yargs.command({
     command:'list',
     describe: 'List all notes',
     handler(){
-        console.log('Listing the notes!')
+        notes.listNotes()
     }
 })
 
