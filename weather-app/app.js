@@ -4,7 +4,6 @@ const chalk = require('chalk')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
-<<<<<<< HEAD
 
 const url = 'https://api.darksky.net/forecast/8592531de454db2c8476bae3b11ed3f5/37.8267,-122.4233?lang=en'
 
@@ -33,25 +32,4 @@ const url = 'https://api.darksky.net/forecast/8592531de454db2c8476bae3b11ed3f5/3
 geocode('Odenton', (error,data) => { //always an error and data in callback
     console.log('Error', error)
     console.log('data', data)
-=======
-const location = process.argv[2] //first 2 in argv array are system level information
-                                // 1. Node executable, 2. Name of the js file being executed
-if(!location){
-    return console.log('Enter a valid location!')
-}
-
-geocode(location,(error,{latitude,longitude,location}) => {
-    if(error){
-        return console.log('GeoCode Error:' + error)
-    }
-    console.log('Longitude:' + longitude)
-    console.log('Latitude:' + latitude)
-    forecast(latitude,longitude,(error,{summary}) => {
-        if(error){
-            return console.log('Forecast Error:' + error)
-        }
-        console.log('Current Forecast Summary for ' + location + ' is ' + summary)
-    })
-    
->>>>>>> 4df5748fdfe3010d8028f7b1150af51f0293f7b1
 })

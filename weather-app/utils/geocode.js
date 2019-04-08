@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const request = require('request')
 
 const geocode =(address,callback) =>{
@@ -17,25 +16,6 @@ const geocode =(address,callback) =>{
                 location: response.body.features[0].place_name
             }
             callback(undefined,output)
-=======
-const request = require ('request')
-
-const geocode = (place,callback) => {
-    const mapURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(place) + '.json?access_token=pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImNqNnM2YmFoNzAwcTMzM214NTB1NHdwbnoifQ.Or19S7KmYPHW8YjRz82v6g&cachebuster=1553279097410&types=place&limit=1'
-    request({url:mapURL,json:true},(error,{body})=>{
-        if(error){
-            callback('No connection available',undefined)
-            
-        } else if(body.error || body.features.length < 1){
-            callback('An error occured, please retry with a new location',undefined)
-        }
-        else{
-            callback(undefined,{
-                    longitude: body.features[0].center[0],
-                    latitude: body.features[0].center[1],
-                    location: body.features[0].place_name 
-            })
->>>>>>> 4df5748fdfe3010d8028f7b1150af51f0293f7b1
         }
     })
 }
