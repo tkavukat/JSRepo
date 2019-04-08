@@ -9,17 +9,17 @@ if(!location){
     return console.log('Enter a valid location!')
 }
 
-geocode(location,(error,data) => {
+geocode(location,(error,{latitude,longitude,location}) => {
     if(error){
         return console.log('GeoCode Error:' + error)
     }
-    console.log('Longitude:' + data.longitude)
-    console.log('Latitude:' + data.latitude)
-    forecast(data.latitude,data.longitude,(error,forecastData) => {
+    console.log('Longitude:' + longitude)
+    console.log('Latitude:' + latitude)
+    forecast(latitude,longitude,(error,{summary}) => {
         if(error){
             return console.log('Forecast Error:' + error)
         }
-        console.log('Current Forecast Summary for ' + data.location + ' is ' + forecastData.summary)
+        console.log('Current Forecast Summary for ' + location + ' is ' + summary)
     })
     
 })
